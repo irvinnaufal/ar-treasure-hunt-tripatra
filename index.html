@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <!-- Use more recent versions if possible -->
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <title>AR Game</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
 </head>
@@ -22,37 +24,9 @@
       <a-text
         value="What is phishing?"
         align="center"
-        position="0 0.5 0"
+        position="0 1 0"
         scale="2 2 2"
-      ></a-text>
-      <a-image
-        src="assets/option1.png"
-        position="-1 0 -1"
-        scale="0.5 0.5 0.5"
-        class="clickable"
-        onclick="handleAnswer('option1')"
-      ></a-image>
-      <a-image
-        src="assets/option2.png"
-        position="1 0 -1"
-        scale="0.5 0.5 0.5"
-        class="clickable"
-        onclick="handleAnswer('option2')"
-      ></a-image>
-    </a-marker>
-
-    <!-- Marker for Question 2 -->
-    <a-marker
-      type="pattern"
-      url="assets/marker.patt"
-      raycaster="objects: .clickable"
-      cursor="fuse: false; rayOrigin: mouse;"
-    >
-      <a-text
-        value="What is a DDoS attack?"
-        align="center"
-        position="0 0.5 0"
-        scale="2 2 2"
+        color="white"
       ></a-text>
       <a-image
         src="assets/option1.png"
@@ -75,7 +49,6 @@
 
   <script>
     function handleAnswer(option) {
-      // Add logic to check the answer and provide feedback
       if (option === 'option1') {
         alert('Correct Answer!');
       } else {
