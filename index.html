@@ -12,22 +12,76 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     embedded
   >
-    <!-- Marker setup -->
+    <!-- Marker for Question 1 -->
     <a-marker
       type="pattern"
       url="assets/marker.patt"
       raycaster="objects: .clickable"
       cursor="fuse: false; rayOrigin: mouse;"
     >
+      <a-text
+        value="What is phishing?"
+        align="center"
+        position="0 0.5 0"
+        scale="2 2 2"
+      ></a-text>
       <a-image
-        src="assets/asset.jpeg"
-        scale="1 1 1"
+        src="assets/option1.png"
+        position="-1 0 -1"
+        scale="0.5 0.5 0.5"
         class="clickable"
-        rotation="-90 0 0"
+        onclick="handleAnswer('option1')"
+      ></a-image>
+      <a-image
+        src="assets/option2.png"
+        position="1 0 -1"
+        scale="0.5 0.5 0.5"
+        class="clickable"
+        onclick="handleAnswer('option2')"
+      ></a-image>
+    </a-marker>
+
+    <!-- Marker for Question 2 -->
+    <a-marker
+      type="pattern"
+      url="assets/marker.patt"
+      raycaster="objects: .clickable"
+      cursor="fuse: false; rayOrigin: mouse;"
+    >
+      <a-text
+        value="What is a DDoS attack?"
+        align="center"
+        position="0 0.5 0"
+        scale="2 2 2"
+      ></a-text>
+      <a-image
+        src="assets/option1.png"
+        position="-1 0 -1"
+        scale="0.5 0.5 0.5"
+        class="clickable"
+        onclick="handleAnswer('option1')"
+      ></a-image>
+      <a-image
+        src="assets/option2.png"
+        position="1 0 -1"
+        scale="0.5 0.5 0.5"
+        class="clickable"
+        onclick="handleAnswer('option2')"
       ></a-image>
     </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
+
+  <script>
+    function handleAnswer(option) {
+      // Add logic to check the answer and provide feedback
+      if (option === 'option1') {
+        alert('Correct Answer!');
+      } else {
+        alert('Try Again!');
+      }
+    }
+  </script>
 </body>
 </html>
