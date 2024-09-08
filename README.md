@@ -1,1 +1,0 @@
-# ar-treasure-hunt-tripatra
