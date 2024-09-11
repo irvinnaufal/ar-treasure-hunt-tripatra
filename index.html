@@ -14,47 +14,22 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
     embedded
   >
-    <!-- Marker for Question 1 -->
+    <!-- Marker setup -->
     <a-marker
       type="pattern"
-      url="assets/marker.patt"
+      url="assets/pattern-tripatra.patt"
       raycaster="objects: .clickable"
       cursor="fuse: false; rayOrigin: mouse;"
     >
-      <a-text
-        value="What is phishing?"
-        align="center"
-        position="0 1 0"
-        scale="2 2 2"
-        color="white"
-      ></a-text>
       <a-image
-        src="assets/option1.png"
-        position="-1 0 -1"
-        scale="0.5 0.5 0.5"
+        src="assets/pattern-tripatra.png"
+        scale="1 1 1"
         class="clickable"
-        onclick="handleAnswer('option1')"
-      ></a-image>
-      <a-image
-        src="assets/option2.png"
-        position="1 0 -1"
-        scale="0.5 0.5 0.5"
-        class="clickable"
-        onclick="handleAnswer('option2')"
+        rotation="-90 0 0"
       ></a-image>
     </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
-
-  <script>
-    function handleAnswer(option) {
-      if (option === 'option1') {
-        alert('Correct Answer!');
-      } else {
-        alert('Try Again!');
-      }
-    }
-  </script>
 </body>
 </html>
