@@ -56,16 +56,14 @@
         id="myImage1"
         src="assets/asset.png"
         scale="2 2 2"
-        gps-entity-place="latitude: -6.934170; longitude: 107.633126; maxDistance: 100; "
-        rotation="0 180 0"
+        gps-entity-place="latitude: -6.934170; longitude: 107.633126; maxDistance: 50; "
       ></a-image>
 
       <a-image
         id="myImage2"
         src="assets/hanako.jpg"
         scale="2 2 2"
-        gps-entity-place="latitude: -6.934202; longitude: 107.633144; maxDistance: 100;"
-        rotation="0 90 0"
+        gps-entity-place="latitude: -6.934202; longitude: 107.633144; maxDistance: 50;"
       ></a-image>
 
       <!-- GPS Camera -->
@@ -75,6 +73,9 @@
     <script>
       // Function to hide the loading screen when the scene is loaded
       function onSceneLoaded() {
+        document.querySelector("#myImage1").setAttribute("look-at", "[gps-camera]");
+        document.querySelector("#myImage2").setAttribute("look-at", "[gps-camera]");
+
         document.getElementById("loading").style.display = "none";
       }
 
