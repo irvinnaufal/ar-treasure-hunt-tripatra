@@ -51,6 +51,7 @@
       <a-image
         id="myImage1"
         src="assets/asset.png"
+
         scale="2 2 2"
         gps-entity-place="latitude: -6.934150; longitude: 107.633106;"
       ></a-image>
@@ -69,6 +70,8 @@
     <script>
       // Function to hide the loading screen when the scene is loaded
       function onSceneLoaded() {
+        document.querySelector("#myImage1").setAttribute("look-at", "[gps-camera]");
+        document.querySelector("#myImage2").setAttribute("look-at", "[gps-camera]");
         document.getElementById('loading').style.display = 'none';
       }
 
