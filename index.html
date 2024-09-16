@@ -19,24 +19,30 @@
       embedded
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
-      <!-- First Image (Original Position) -->
       <a-image
+        id="myImage1"
         src="assets/asset.png"
-        look-at="[gps-camera]"
         scale="5 5 5"
-        gps-entity-place="latitude: -6.9342836; longitude: 107.6329802; maxDistance: 5000;"
+        gps-entity-place="latitude: -6.9342836; longitude: 107.6329897; maxDistance: 5000;"
       ></a-image>
-      >
 
-      <!-- Second Image (Original Position) -->
-      <a-image
-        src="assets/hanako.jpg"
-        look-at="[gps-camera]"
-        scale="5 5 5"
-        gps-entity-place="latitude: -6.934274; longitude: 107.633272; maxDistance: 5000;"
-      ></a-image>
+        <a-image
+            id="myImage2"
+            src="assets/hanako.jpg"
+            scale="5 5 5"
+            gps-entity-place="latitude: -6.934274; longitude: 107.633227; maxDistance: 5000;"
+        ></a-image>
+
+      <!-- GPS Camera -->
+      <a-camera gps-camera rotation-reader></a-camera>
+
       <!-- GPS Camera -->
       <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
+
+  <script>
+    document.querySelector("#myImage1").setAttribute("look-at", "[gps-camera]");
+    document.querySelector("#myImage2").setAttribute("look-at", "[gps-camera]");
+  </script>
 </html>
