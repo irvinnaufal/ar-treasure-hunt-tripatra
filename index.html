@@ -8,7 +8,8 @@
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script>
-      THREEx.ArToolkitContext.baseURL = "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
+      THREEx.ArToolkitContext.baseURL =
+        "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/";
     </script>
   </head>
 
@@ -19,17 +20,19 @@
       arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
     >
       <!-- First Image (Original Position) -->
-      <a-text value="This will be first image"
+      <a-image
+        src="assets/asset.png"
         look-at="[gps-camera]"
         scale="75 75 75"
         gps-entity-place="latitude: -6.9342836; longitude: 107.6329802; maxDistance: 5000;"
-      ></a-text>
+      ></a-image>
       >
 
       <!-- Second Image (Original Position) -->
-      <a-text value="This will be second image."
+      <a-image
+        src="assets/hanako.jpg"
         look-at="[gps-camera]"
-        scale="75 75 75"
+        scale="5 5 5"
         gps-entity-place="latitude: -6.934274; longitude: 107.633272; maxDistance: 5000;"
       ></a-image>
       <!-- GPS Camera -->
