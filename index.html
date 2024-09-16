@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>GeoAR.js demo</title>
@@ -8,37 +8,41 @@
     <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      #loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      #spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-left: 4px solid #3498db;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
-        #loading {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
+        100% {
+          transform: rotate(360deg);
         }
-        #spinner {
-            border: 4px solid rgba(0,0,0,0.1);
-            border-left: 4px solid #3498db;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Loading Indicator -->
     <div id="loading">
-        <div id="spinner"></div>
-        <p>Loading...</p>
+      <div id="spinner"></div>
+      <p>Loading...</p>
     </div>
 
     <!-- AR Scene -->
@@ -51,16 +55,17 @@
       <a-image
         id="myImage1"
         src="assets/asset.png"
-
         scale="2 2 2"
-        gps-entity-place="latitude: -6.934150; longitude: 107.633106;"
+        gps-entity-place="latitude: -6.934150; longitude: 107.633106; maxDistance: 100; "
+        rotation="0 180 0"
       ></a-image>
 
       <a-image
         id="myImage2"
         src="assets/hanako.jpg"
-        scale="2 2 2"               
-        gps-entity-place="latitude: -6.934202; longitude: 107.633164;"
+        scale="2 2 2"
+        gps-entity-place="latitude: -6.934202; longitude: 107.633164; maxDistance: 100;"
+        rotation="0 0 0"
       ></a-image>
 
       <!-- GPS Camera -->
@@ -70,13 +75,13 @@
     <script>
       // Function to hide the loading screen when the scene is loaded
       function onSceneLoaded() {
-        document.querySelector("#myImage1").setAttribute("look-at", "[gps-camera]");
-        document.querySelector("#myImage2").setAttribute("look-at", "[gps-camera]");
-        document.getElementById('loading').style.display = 'none';
+        document.getElementById("loading").style.display = "none";
       }
 
       // Add an event listener to the scene for when it's loaded
-      document.querySelector('a-scene').addEventListener('loaded', onSceneLoaded);
+      document
+        .querySelector("a-scene")
+        .addEventListener("loaded", onSceneLoaded);
     </script>
-</body>
+  </body>
 </html>
