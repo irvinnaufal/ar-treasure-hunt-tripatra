@@ -19,7 +19,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934173; longitude: 107.633085;"
+    gps-entity-place="latitude: -6.934173; longitude: 107.633085; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Second Image (North-East) -->
@@ -27,7 +27,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934152; longitude: 107.633103;"
+    gps-entity-place="latitude: -6.934152; longitude: 107.633103; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Third Image (South-East) -->
@@ -35,7 +35,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934210; longitude: 107.633110;"
+    gps-entity-place="latitude: -6.934210; longitude: 107.633110; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Fourth Image (North) -->
@@ -43,7 +43,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934130; longitude: 107.633085;" <!-- ~5 meters north -->
+    gps-entity-place="latitude: -6.934130; longitude: 107.633085; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Fifth Image (South) -->
@@ -51,7 +51,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934213; longitude: 107.633085;" <!-- ~5 meters south -->
+    gps-entity-place="latitude: -6.934213; longitude: 107.633085; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Sixth Image (West) -->
@@ -59,7 +59,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934173; longitude: 107.633065;" <!-- ~2 meters west -->
+    gps-entity-place="latitude: -6.934173; longitude: 107.633065; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Seventh Image (East) -->
@@ -67,7 +67,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934173; longitude: 107.633105;" <!-- ~2 meters east -->
+    gps-entity-place="latitude: -6.934173; longitude: 107.633105; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Eighth Image (North-West) -->
@@ -75,7 +75,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934130; longitude: 107.633065;" <!-- ~5 meters north, ~2 meters west -->
+    gps-entity-place="latitude: -6.934130; longitude: 107.633065; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Ninth Image (South-West) -->
@@ -83,7 +83,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934213; longitude: 107.633065;" <!-- ~5 meters south, ~2 meters west -->
+    gps-entity-place="latitude: -6.934213; longitude: 107.633065; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Tenth Image (South-East) -->
@@ -91,7 +91,7 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934213; longitude: 107.633105;" <!-- ~5 meters south, ~2 meters east -->
+    gps-entity-place="latitude: -6.934213; longitude: 107.633105; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
     <!-- Eleventh Image (North-East) -->
@@ -99,11 +99,12 @@
     src="assets/asset.png"
     look-at="[gps-camera]"
     scale="5 5 5"
-    gps-entity-place="latitude: -6.934130; longitude: 107.633105;" <!-- ~5 meters north, ~2 meters east -->
+    gps-entity-place="latitude: -6.934130; longitude: 107.633105; maxDistance: 500;" <!-- Visible up to 500 meters -->
     ></a-image>
 
+    <!-- GPS Camera -->
+    <a-camera gps-camera rotation-reader></a-camera>
 
-      <a-camera gps-camera rotation-reader></a-camera>
     </a-scene>
   </body>
 </html>
