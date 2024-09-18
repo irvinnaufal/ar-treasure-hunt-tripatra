@@ -4,12 +4,20 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>GeoAR.js demo</title>
-    <script src='https://aframe.io/releases/0.9.2/aframe.min.js'></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script>
-        THREEx.ArToolkitContext.baseURL = 'https://raw.githack.com/jeromeetienne/ar.js/master/three.js/'
-    </script>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <!-- A-Frame itself -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- Pure three.js code that the A-Frame components use for location-based AR -->
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar-threex-location-only.js"
+    ></script>
+
+    <!-- AR.js A-Frame components -->
+    <script
+      type="text/javascript"
+      src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"
+    ></script>
     <style>
       body {
         margin: 0;
@@ -51,16 +59,23 @@
     <!-- AR Scene -->
     <a-scene
       vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;"
-      loaded="onSceneLoaded"
+      arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false"
+      renderer="antialias: true; alpha: true"
     >
+      <a-camera
+        id="camera1"
+        look-controls-enabled="false"
+        arjs-look-controls="smoothingFactor: 0.1"
+        gps-projected-camera="gpsMinDistance: 5"
+      >
+      </a-camera>
+
       <a-image
         id="myImage1"
         src="assets/asset.png"
         scale="1 1 1"
         position="0 60 0"
-        gps-entity-place="latitude: -6.274703; longitude: 106.720872;"
+        gps-new-entity-place="latitude: -6.274703; longitude: 106.720872;"
         look-at="[gps-camera]"
       ></a-image>
 
@@ -69,13 +84,27 @@
         src="assets/hanako.jpg"
         scale="1 1 1"
         position="0 60 0"
-        gps-entity-place="latitude: -6.274743; longitude: 106.720892;"
+        gps-new-entity-place="latitude: -6.274743; longitude: 106.720892;"
         look-at="[gps-camera]"
       ></a-image>
 
-      <!-- GPS Camera -->
-      <a-camera far="100" gps-camera rotation-reader arjs-look-controls='smoothingFactor: 0.1' look-controls-enabled='false'></a-camera>
-      <!-- <a-camera id='camera1' look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-projected-camera='gpsMinDistance: 5'> </a-camera> -->
+      <a-entity
+        material="color: red"
+        geometry="primitive: box"
+        gps-new-entity-place="latitude: -6.274703; longitude: 106.720872;"
+        scale="10 10 10"
+        position="0 60 0"
+        look-at="[gps-camera]"
+      ></a-entity>
+
+      <!-- GPS Camera
+      <a-camera
+        far="100"
+        gps-camera
+        rotation-reader
+        arjs-look-controls="smoothingFactor: 0.1"
+        look-controls-enabled="false"
+      ></a-camera> -->
     </a-scene>
 
     <script>
