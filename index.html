@@ -60,7 +60,7 @@
         src="assets/asset.png"
         scale="1 1 1"
         position="0 60 0"
-        gps-entity-place="latitude: -6.274703; longitude: 106.720872;"
+        gps-new-entity-place="latitude: -6.274703; longitude: 106.720872;"
         look-at="[gps-camera]"
       ></a-image>
 
@@ -69,13 +69,12 @@
         src="assets/hanako.jpg"
         scale="1 1 1"
         position="0 60 0"
-        gps-entity-place="latitude: -6.274743; longitude: 106.720892;"
+        gps-new-entity-place="latitude: -6.274743; longitude: 106.720892;"
         look-at="[gps-camera]"
       ></a-image>
 
       <!-- GPS Camera -->
-      <a-camera far="100" gps-camera rotation-reader arjs-look-controls='smoothingFactor: 0.1' look-controls-enabled='false'></a-camera>
-      <!-- <a-camera id='camera1' look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1' gps-projected-camera='gpsMinDistance: 5'> </a-camera> -->
+      <a-camera id='camera1' look-controls-enabled='false' arjs-device-orientation-controls='smoothingFactor: 0.1' gps-new-camera='gpsMinDistance: 5'> </a-camera>
     </a-scene>
 
     <script>
